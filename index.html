@@ -55,7 +55,7 @@
 	</head>
 	<body style="background-color: #f2f2f2;" ng-app="starterApp" ng-controller="UserController as ul">
 		<!-- Header Section -->
-		 <md-toolbar class="md-toolbar-tools" id="main">
+		 <md-toolbar class="md-toolbar-tools" id="main" style="background-color: #242424; color: wheat;">
 			<md-button class="md-icon-button" hide-gt-md ng-click="ul.toggleList()" aria-label="Show User List">
 			<md-icon md-svg-icon="menu" ></md-icon>
 			</md-button>
@@ -71,19 +71,19 @@
 		<!-- //Header Section -->
 		
 		<!-- Inner Section -->
-		<md-content flex layout="row" style="background-color: #f2f2f2;">
+		<md-content flex layout="row" style="background-color:#242424">
 		
 			<!-- Canvas Section -->
-			<md-content  id="content" layout="column"  style="background-color: #f2f2f2;" md-swipe-right="toggleSidenav()">
+			<md-content  id="content" layout="column"  style="background-color: #242424" md-swipe-right="toggleSidenav()">
 				<canvas id="demoCanvas" width="700" height="700" align="center" layout-fill experiment></canvas>
 				<md-content id="graphDiv" layout-xs ng-hide="divshow" class="md-default-theme" aria-hidden="false"></md-content>
 				<div id="Copyright" layout="row" layout-align="center end">{{copyright}}</div>
 			</md-content>
 			<!-- //Canvas Section -->
 			<!-- Side nav -->
-			<md-sidenav class="site-sidenav md-sidenav-left" ID="site-sidenav" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-swipe-left="toggleSidenav()">
+			<md-sidenav class="site-sidenav md-sidenav-left" ID="site-sidenav" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-swipe-left="toggleSidenav()" style="background-color: #242424;">
 				 <!-- side nav top border -->
-				<md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()">{{variables}} 
+				<md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()" style="background-color: #2B2B2B; color: wheat;">{{variables}} 
 					<span aria-hidden="true">
 						<md-icon md-svg-src="md-toggle-arrow"  aria-hidden="true" ng-animate="{enter: 'rotate', leave: 'rotateCounterwise'}" ng-class="{true: 'rotate', false: 'rotateCounterwise'}[isActive1]" ></md-icon>
 					</span>
@@ -91,9 +91,9 @@
 				<!-- //side nav top border -->
 				
 				<!-- Variables Section -->
-				<div ng-hide="showVariables" class="div">
+				<div ng-hide="showVariables" class="div" style="background-color:#2B2B2B ">
 					 <!-- Select Material  label -->
-					<md-content id="wire" class="md-title selectable" layout-padding>{{select_material_lbl}}</md-content>
+					<md-content id="wire" class="md-title selectable" layout-padding style="background-color: #2B2B2B; color: wheat;">{{select_material_lbl}}</md-content>
 					<!-- //Select Material  label -->
 					
 					<!-- Select Material dropdown box -->
@@ -103,17 +103,17 @@
 					<!--// Select Material dropdown box -->
 					
 					 <!-- Range of Current  label -->
-					<md-content id="wire" class="md-title selectable" layout-padding>{{range_of_current_lbl}}</md-content>
+					<md-content id="wire" class="md-title selectable" layout-padding style="background-color: #2B2B2B; color: wheat;">{{range_of_current_lbl}}</md-content>
 					<!-- //Range of Current   label -->
 					
 					<!-- Range of Current  dropdown box -->
 					<md-select  placeholder="{{current_value}}" ng-model="range_of_current" ng-change="select_range_of_current()">
-						<md-option class="md-title selectable" ng-repeat="x in range_of_current_array" value="{{ x.index }}">{{ x.Current }}</md-option>
+						<md-option class="md-title selectable" ng-repeat="x in range_of_current_array" value="{{ x.index }}" >{{ x.Current }}</md-option>
 					</md-select>
 					<!--// Range of Current  dropdown box -->
 					
 					<!-- Current (mA) label -->
-					 <md-content class="md-title selectable" ng-model="disc_mass" layout-padding id="disc_mass">{{current_am_value }} {{curren_mAValue_lbl}}</md-content>
+					 <md-content class="md-title selectable" ng-model="disc_mass" layout-padding id="disc_mass" style="background-color: #2B2B2B; color: wheat;">{{current_am_value }} {{curren_mAValue_lbl}}</md-content>
 					 
 					<!-- //Current (mA) label -->
 					
@@ -123,20 +123,20 @@
 					
 					</div>
 					
-					<div class=".selectable .md-title, .md-toolbar-tools" style="display:inline;     font-size: 16px;">{{initial_mA}}</div>
-					 <div class=".selectable .md-title, .md-toolbar-tools"  style="float:right;     font-size: 16px;     padding-right: 2%;">{{final_mA}}</div>
+					<div class=".selectable .md-title, .md-toolbar-tools" style="display:inline;     font-size: 16px; background-color: #2B2B2B; color: wheat;" >{{initial_mA}}</div>
+					 <div class=".selectable .md-title, .md-toolbar-tools"  style="float:right;     font-size: 16px;     padding-right: 2%; background-color: #2B2B2B; color: wheat;" >{{final_mA}}</div>
 					<!-- //Current (mA) slider -->
 					
 					 <!-- Oven label -->
-					<md-content style="text-decoration: underline;" id="Oven" class="md-title selectable" layout-padding>{{oven}}</md-content>
+					<md-content style="text-decoration: underline; background-color: #2B2B2B; color: wheat;" id="Oven" class="md-title selectable" layout-padding >{{oven}}</md-content>
 					 <!-- //Oven label -->
 					
 					  <!-- Show cross-section  check box -->
-					<md-checkbox class="md-title selectable" ng-model="CrossSection" aria-label="Checkbox 1" id="CrossSection" ng-change="showCrossSection();">{{cross_section_lbl}}</md-checkbox>
+					<md-checkbox class="md-title selectable" ng-model="CrossSection" aria-label="Checkbox 1" id="CrossSection" ng-change="showCrossSection();" style="background-color: #2B2B2B; color: wheat;">{{cross_section_lbl}}</md-checkbox>
 					 <!-- //Show cross-section  check box -->
 					
 					 <!-- Range of Oven  label -->
-					<md-content id="wire" class="md-title selectable" layout-padding>{{range_of_Oven_lbl}}</md-content>
+					<md-content id="wire" class="md-title selectable" layout-padding style="background-color: #2B2B2B; color: wheat;">{{range_of_Oven_lbl}}</md-content>
 					<!-- //Range of Oven   label -->
 					
 					<!-- Range of Oven dropdown box -->
@@ -147,22 +147,22 @@
 					
 					 <!--  Button Section  -->
 					<section layout="row" layout-align="center center">
-						<md-button ng-disabled="set_btn_disable" class="md-raised" id="stop_btn" ng-click="set_Btn();">{{set_lb}}</md-button>
+						<md-button ng-disabled="set_btn_disable" class="md-raised" id="stop_btn" ng-click="set_Btn();" style="background-color: #2B2B2B; color: wheat;">{{set_lb}}</md-button>
 						
-						<md-button ng-disabled="measure_btn_disable"  class="md-raised" id="stop_btn" ng-click="measure_btn();">{{measure_lbl}}</md-button>
+						<md-button ng-disabled="measure_btn_disable"  class="md-raised" id="stop_btn" ng-click="measure_btn();" style="background-color: #2B2B2B; color: wheat;">{{measure_lbl}}</md-button>
 						
 					</section>
 					<section layout="row" layout-align="center center">
-					<md-button ng-disabled="run_btn_disable"  class="md-raised" id="stop_btn" ng-click="run_btn();">{{run_lbl}}</md-button>
+					<md-button ng-disabled="run_btn_disable"  class="md-raised" id="stop_btn" ng-click="run_btn();" style="background-color: #2B2B2B; color: wheat;">{{run_lbl}}</md-button>
 					
-						<md-button ng-disabled="wait_btn_disable"  class="md-raised" id="stop_btn" ng-click="wait_btn();">{{wait_lbl}}</md-button>
+						<md-button ng-disabled="wait_btn_disable"  class="md-raised" id="stop_btn" ng-click="wait_btn();" style="background-color: #2B2B2B; color: wheat;">{{wait_lbl}}</md-button>
 						
 						
 					</section>
 					<!-- // Button Section  -->
 					
 					<!--Temperature label -->
-					 <md-content class="md-title selectable" layout-padding id="temperature_label">{{temperature_lbl}} {{curren_temperature}}</md-content>
+					 <md-content class="md-title selectable" layout-padding id="temperature_label" style="background-color: #2B2B2B; color: wheat;">{{temperature_lbl}} {{curren_temperature}}</md-content>
 					<!-- //Temperature label -->
 					
 					<!-- Temperature slider -->
@@ -171,11 +171,11 @@
 					</div>
 					<!-- //Temperature slider -->
 					
-					<div class=".selectable .md-title, .md-toolbar-tools" style="display:inline;     font-size: 16px;">{{initial_temperature}}</div>
-					 <div class=".selectable .md-title, .md-toolbar-tools"  style="float:right;     font-size: 16px; padding-right: 2%;">{{final_temperature}}</div>
+					<div class=".selectable .md-title, .md-toolbar-tools" style="display:inline;     font-size: 16px;  background-color: #2B2B2B; color: wheat;" >{{initial_temperature}}</div>
+					 <div class=".selectable .md-title, .md-toolbar-tools"  style="float:right;     font-size: 16px; padding-right: 2%;  background-color: #2B2B2B; color: wheat;">{{final_temperature}}</div>
 					
 					 <!-- Range of Voltmeter  label -->
-					<md-content id="wire" class="md-title selectable" layout-padding>{{range_ofVoltmeter_lbl}}</md-content>
+					<md-content id="wire" class="md-title selectable" layout-padding style="background-color: #2B2B2B; color: wheat;">{{range_ofVoltmeter_lbl}}</md-content>
 					<!-- //Range of Voltmeter  label -->
 					
 					<!-- Range of Voltmeter dropdown box -->
@@ -186,7 +186,7 @@
 					
 					 <!-- Reset  Button   -->
 					<section layout="row" layout-align="center center">
-						<md-button  class="md-raised" id="stop_btn" ng-click="resetExperiment();">{{reset_labl}}</md-button>
+						<md-button  class="md-raised" id="stop_btn" ng-click="resetExperiment();" style="background-color: #2B2B2B; color: wheat;">{{reset_labl}}</md-button>
 						
 					</section>
 					 <!-- //Reset  Button   -->
@@ -194,19 +194,19 @@
 				<!-- // Variables Section -->
 				
 				<!-- Result Section   -->
-				<md-button id="result" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle()">{{result}}
+				<md-button id="result" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle()" style="background-color: #2B2B2B; color: wheat;">{{result}}
 					<span aria-hidden="true">
 					<md-icon md-svg-src="md-toggle-arrow"   aria-hidden="true" ng-animate="{enter: 'rotate', leave: 'rotateCounterwise'}" ng-class="{true: 'rotate', false: 'rotateCounterwise'}[isActive]" ></md-icon>
 					</span>
 				</md-button>
 				 <!-- //inset result label // -->
-				<div ng-hide="showValue" class="div">
+				<div ng-hide="showValue" class="div" style="background-color: #2B2B2B; color: wheat;">
 					
 					  <!-- Show show result check box -->
-					<md-checkbox ng-disabled="showResult_btn_disable" class="md-title selectable" ng-model="showResult_mdl" aria-label="Checkbox 1" id="CrossSection" ng-change="showResult();">{{showresult_lbl}}</md-checkbox>
+					<md-checkbox ng-disabled="showResult_btn_disable" class="md-title selectable" ng-model="showResult_mdl" aria-label="Checkbox 1" id="CrossSection" ng-change="showResult();" >{{showresult_lbl}}</md-checkbox>
 					 <!-- //Show show result check box -->
 					 
-					 <md-content id="resultSection" class="md-title selectable" layout-padding>{{resistivity_ohm_lbl}} {{resistivity_result}}</md-content>
+					 <md-content id="resultSection" class="md-title selectable" layout-padding style="background-color: #2B2B2B; color: wheat;">{{resistivity_ohm_lbl}} {{resistivity_result}}</md-content>
 				</div>
 				<!-- //Result Section   -->
 			</md-sidenav>
