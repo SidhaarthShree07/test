@@ -52,6 +52,13 @@
 				.accentPalette('red');
 			});
 		</script>
+
+		<style>
+			body{
+				color: wheat;
+			}
+
+		</style>
 	</head>
 	<body style="background-color: #f2f2f2;" ng-app="starterApp" ng-controller="UserController as ul">
 		<!-- Header Section -->
@@ -97,8 +104,8 @@
 					<!-- //Select Material  label -->
 					
 					<!-- Select Material dropdown box -->
-					<md-select  placeholder="{{germanium}}" ng-model="select_Material_mdl" ng-change="select_Material()">
-						<md-option class="md-title selectable" ng-repeat="x in meterial_array" value="{{ x.index }}">{{ x.Material }}</md-option>
+					<md-select placeholder="{{germanium}}" ng-model="select_Material_mdl" ng-change="select_Material()">
+						<md-option  class="md-title selectable" ng-repeat="x in meterial_array" value="{{ x.index }}">{{ x.Material }}</md-option>
 					</md-select>
 					<!--// Select Material dropdown box -->
 					
@@ -108,7 +115,7 @@
 					
 					<!-- Range of Current  dropdown box -->
 					<md-select  placeholder="{{current_value}}" ng-model="range_of_current" ng-change="select_range_of_current()">
-						<md-option class="md-title selectable" ng-repeat="x in range_of_current_array" value="{{ x.index }}" >{{ x.Current }}</md-option>
+						<md-option class="md-title selectable" ng-repeat="x in range_of_current_array" value="{{ x.index }}"  >{{ x.Current }}</md-option>
 					</md-select>
 					<!--// Range of Current  dropdown box -->
 					
@@ -147,15 +154,15 @@
 					
 					 <!--  Button Section  -->
 					<section layout="row" layout-align="center center">
-						<md-button ng-disabled="set_btn_disable" class="md-raised" id="stop_btn" ng-click="set_Btn();" style="background-color: #2B2B2B; color: wheat;">{{set_lb}}</md-button>
+						<md-button ng-disabled="set_btn_disable" class="md-raised" id="stop_btn" ng-click="set_Btn();" style="background-color: black; color: wheat;">{{set_lb}}</md-button>
 						
-						<md-button ng-disabled="measure_btn_disable"  class="md-raised" id="stop_btn" ng-click="measure_btn();" style="background-color: #2B2B2B; color: wheat;">{{measure_lbl}}</md-button>
+						<md-button ng-disabled="measure_btn_disable"  class="md-raised" id="stop_btn" ng-click="measure_btn();" style="background-color: black; color: wheat;">{{measure_lbl}}</md-button>
 						
 					</section>
 					<section layout="row" layout-align="center center">
-					<md-button ng-disabled="run_btn_disable"  class="md-raised" id="stop_btn" ng-click="run_btn();" style="background-color: #2B2B2B; color: wheat;">{{run_lbl}}</md-button>
+					<md-button ng-disabled="run_btn_disable"  class="md-raised" id="stop_btn" ng-click="run_btn();" style="background-color: black; color: wheat;">{{run_lbl}}</md-button>
 					
-						<md-button ng-disabled="wait_btn_disable"  class="md-raised" id="stop_btn" ng-click="wait_btn();" style="background-color: #2B2B2B; color: wheat;">{{wait_lbl}}</md-button>
+						<md-button ng-disabled="wait_btn_disable"  class="md-raised" id="stop_btn" ng-click="wait_btn();" style="background-color: black; color: wheat;">{{wait_lbl}}</md-button>
 						
 						
 					</section>
@@ -186,7 +193,7 @@
 					
 					 <!-- Reset  Button   -->
 					<section layout="row" layout-align="center center">
-						<md-button  class="md-raised" id="stop_btn" ng-click="resetExperiment();" style="background-color: #2B2B2B; color: wheat;">{{reset_labl}}</md-button>
+						<md-button  class="md-raised" id="stop_btn" ng-click="resetExperiment();" style="background-color:black; color: wheat;">{{reset_labl}}</md-button>
 						
 					</section>
 					 <!-- //Reset  Button   -->
