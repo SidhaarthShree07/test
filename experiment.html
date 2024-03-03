@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="theme-color" content="#0F69C3">
+		<meta name="msapplication-TileColor" content="#0F69C3">	
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#0F69C3">
+		<meta name="mobile-web-app-status-bar-style" content="#0F69C3">
+		<meta name="msapplication-TileImage" content="images/logo_144.png">
+		<link rel=icon sizes="512x512" href="images/logo_512.png">			
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/logo_512.png"/>
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/logo_72.png"/>
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/logo_144.png"/>
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/logo_144.png"/>	
+		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">	
+		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="manifest.json">
+		<link rel='stylesheet' href='css\fonts.googleapis.css'>
+		<link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+		<link rel="stylesheet" href="css/app.css"/>
+		<link rel="stylesheet" href="css/experiment.css"/>
+		<script src="js/createjs-2015.05.21.min.js"></script>
+		<script src="js/easeljs-0.7.0.min.js"></script>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/angular-aria/angular-aria.js"></script>
+		<script src="bower_components/angular-fullscreen/angular-fullscreen.js"></script>
+		<script src="js/Gettext.js"></script>
+		<script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
+		<script src="js/getlanguage.js"></script>
+		<script src="js/canvasjs.min.js"></script>
+		<script src="js/user_controller.js"></script>
+		<script src="js/view.js"></script>    
+		<script src="js/experiment.js"></script>
+		<script src="js/stopwatch.js"></script>
+		<script type="text/javascript">
+			angular
+			.module('starterApp', ['ngMaterial','users'])
+			.config(function($mdThemingProvider, $mdIconProvider){
+				$mdIconProvider
+				.icon("menu"       , "../template/assets/svg/menu.svg"        , 24)
+				.icon("fullscreen"       , "../template/assets/icons/Icon3.svg", 24)
+				.icon("help"      , "../template/assets/icons/Icon2.svg", 24);
+				$mdThemingProvider.theme('default')
+				.primaryPalette('blue')
+				.accentPalette('red');
+			});
+		</script>
+	</head>
+	<body style="background-color: #f2f2f2;" ng-app="starterApp" ng-controller="UserController as ul">
+		<!-- Header Section -->
+		 <md-toolbar class="md-toolbar-tools" id="main">
+			<md-button class="md-icon-button" hide-gt-md ng-click="ul.toggleList()" aria-label="Show User List">
+			<md-icon md-svg-icon="menu" ></md-icon>
+			</md-button>
+			<!-- //Experiment title gives here//   -->
+			<h1 flex="" layout="row" class="expTitle" id="expTitle">{{heading}}</h1>
+			<md-button class="md-icon-button" aria-label="help" ng-click="showActionToast()">
+			<md-icon md-svg-icon="help"></md-icon>
+			</md-button>
+			<md-button class="md-icon-button" aria-label="fullscreen" ng-click="goFullscreen()">
+			<md-icon md-svg-icon="fullscreen"></md-icon>
+			</md-button>
+		</md-toolbar>
+		<!-- //Header Section -->
+		
+		<!-- Inner Section -->
+		<md-content flex layout="row" style="background-color: #f2f2f2;">
+		
+			<!-- Canvas Section -->
+			<md-content  id="content" layout="column"  style="background-color: #f2f2f2;" md-swipe-right="toggleSidenav()">
+				<canvas id="demoCanvas" width="700" height="700" align="center" layout-fill experiment></canvas>
+				<md-content id="graphDiv" layout-xs ng-hide="divshow" class="md-default-theme" aria-hidden="false"></md-content>
+				<div id="Copyright" layout="row" layout-align="center end">{{copyright}}</div>
+			</md-content>
+			<!-- //Canvas Section -->
+			<!-- Side nav -->
+			<md-sidenav class="site-sidenav md-sidenav-left" ID="site-sidenav" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-swipe-left="toggleSidenav()">
+				 <!-- side nav top border -->
+				<md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()">{{variables}} 
+					<span aria-hidden="true">
+						<md-icon md-svg-src="md-toggle-arrow"  aria-hidden="true" ng-animate="{enter: 'rotate', leave: 'rotateCounterwise'}" ng-class="{true: 'rotate', false: 'rotateCounterwise'}[isActive1]" ></md-icon>
+					</span>
+				</md-button>
+				<!-- //side nav top border -->
+				
+				<!-- Variables Section -->
+				<div ng-hide="showVariables" class="div">
+					 <!-- Select Material  label -->
+					<md-content id="wire" class="md-title selectable" layout-padding>{{select_material_lbl}}</md-content>
+					<!-- //Select Material  label -->
+					
+					<!-- Select Material dropdown box -->
+					<md-select  placeholder="{{germanium}}" ng-model="select_Material_mdl" ng-change="select_Material()">
+						<md-option class="md-title selectable" ng-repeat="x in meterial_array" value="{{ x.index }}">{{ x.Material }}</md-option>
+					</md-select>
+					<!--// Select Material dropdown box -->
+					
+					 <!-- Range of Current  label -->
+					<md-content id="wire" class="md-title selectable" layout-padding>{{range_of_current_lbl}}</md-content>
+					<!-- //Range of Current   label -->
+					
+					<!-- Range of Current  dropdown box -->
+					<md-select  placeholder="{{current_value}}" ng-model="range_of_current" ng-change="select_range_of_current()">
+						<md-option class="md-title selectable" ng-repeat="x in range_of_current_array" value="{{ x.index }}">{{ x.Current }}</md-option>
+					</md-select>
+					<!--// Range of Current  dropdown box -->
+					
+					<!-- Current (mA) label -->
+					 <md-content class="md-title selectable" ng-model="disc_mass" layout-padding id="disc_mass">{{current_am_value }} {{curren_mAValue_lbl}}</md-content>
+					 
+					<!-- //Current (mA) label -->
+					
+					<!-- Current (mA) slider -->
+					<div layout>
+						<md-slider  flex ng-change="change_mA()" ng-model="curren_mAValue" step="{{curren_mA_steps}}" min="{{curren_mA_min}}" max="{{curren_mA_max}}" aria-label="rating"></md-slider>
+					
+					</div>
+					
+					<div class=".selectable .md-title, .md-toolbar-tools" style="display:inline;     font-size: 16px;">{{initial_mA}}</div>
+					 <div class=".selectable .md-title, .md-toolbar-tools"  style="float:right;     font-size: 16px;     padding-right: 2%;">{{final_mA}}</div>
+					<!-- //Current (mA) slider -->
+					
+					 <!-- Oven label -->
+					<md-content style="text-decoration: underline;" id="Oven" class="md-title selectable" layout-padding>{{oven}}</md-content>
+					 <!-- //Oven label -->
+					
+					  <!-- Show cross-section  check box -->
+					<md-checkbox class="md-title selectable" ng-model="CrossSection" aria-label="Checkbox 1" id="CrossSection" ng-change="showCrossSection();">{{cross_section_lbl}}</md-checkbox>
+					 <!-- //Show cross-section  check box -->
+					
+					 <!-- Range of Oven  label -->
+					<md-content id="wire" class="md-title selectable" layout-padding>{{range_of_Oven_lbl}}</md-content>
+					<!-- //Range of Oven   label -->
+					
+					<!-- Range of Oven dropdown box -->
+					<md-select ng-disabled="change_rangeOf_disable" placeholder="{{initial_range_of_Oven}}" ng-model="change_rangeOf_ovenMdl" ng-change="change_rangeOf_oven();">
+						<md-option class="md-title selectable" ng-repeat="x in rangeof_Voltmeter_array" value="{{ x.index }}">{{ x.Range }}</md-option>
+					</md-select>
+					<!--// Range of Oven dropdown box -->
+					
+					 <!--  Button Section  -->
+					<section layout="row" layout-align="center center">
+						<md-button ng-disabled="set_btn_disable" class="md-raised" id="stop_btn" ng-click="set_Btn();">{{set_lb}}</md-button>
+						
+						<md-button ng-disabled="measure_btn_disable"  class="md-raised" id="stop_btn" ng-click="measure_btn();">{{measure_lbl}}</md-button>
+						
+					</section>
+					<section layout="row" layout-align="center center">
+					<md-button ng-disabled="run_btn_disable"  class="md-raised" id="stop_btn" ng-click="run_btn();">{{run_lbl}}</md-button>
+					
+						<md-button ng-disabled="wait_btn_disable"  class="md-raised" id="stop_btn" ng-click="wait_btn();">{{wait_lbl}}</md-button>
+						
+						
+					</section>
+					<!-- // Button Section  -->
+					
+					<!--Temperature label -->
+					 <md-content class="md-title selectable" layout-padding id="temperature_label">{{temperature_lbl}} {{curren_temperature}}</md-content>
+					<!-- //Temperature label -->
+					
+					<!-- Temperature slider -->
+					<div layout>
+						<md-slider ng-disabled="curren_temperatureSlider_disable"  flex ng-change="changeTemperature()" ng-model="curren_temperature_mdl" step="{{curren_temperature_steps}}" min="{{initial_temperature}}" max="{{final_temperature}}" aria-label="temperature_label"></md-slider>
+					</div>
+					<!-- //Temperature slider -->
+					
+					<div class=".selectable .md-title, .md-toolbar-tools" style="display:inline;     font-size: 16px;">{{initial_temperature}}</div>
+					 <div class=".selectable .md-title, .md-toolbar-tools"  style="float:right;     font-size: 16px; padding-right: 2%;">{{final_temperature}}</div>
+					
+					 <!-- Range of Voltmeter  label -->
+					<md-content id="wire" class="md-title selectable" layout-padding>{{range_ofVoltmeter_lbl}}</md-content>
+					<!-- //Range of Voltmeter  label -->
+					
+					<!-- Range of Voltmeter dropdown box -->
+					<md-select  placeholder="{{range_ofVoltmeter}}" ng-model="range_ofVoltmeter_mdl" ng-change="changeRangeof_voltmeter();">
+						<md-option class="md-title selectable" ng-repeat="x in range_ofVoltmeter_array" value="{{ x.index }}">{{ x.Range_Voltmeter }}</md-option>
+					</md-select>
+					<!--// Range of Voltmeter dropdown box -->
+					
+					 <!-- Reset  Button   -->
+					<section layout="row" layout-align="center center">
+						<md-button  class="md-raised" id="stop_btn" ng-click="resetExperiment();">{{reset_labl}}</md-button>
+						
+					</section>
+					 <!-- //Reset  Button   -->
+				</div>
+				<!-- // Variables Section -->
+				
+				<!-- Result Section   -->
+				<md-button id="result" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle()">{{result}}
+					<span aria-hidden="true">
+					<md-icon md-svg-src="md-toggle-arrow"   aria-hidden="true" ng-animate="{enter: 'rotate', leave: 'rotateCounterwise'}" ng-class="{true: 'rotate', false: 'rotateCounterwise'}[isActive]" ></md-icon>
+					</span>
+				</md-button>
+				 <!-- //inset result label // -->
+				<div ng-hide="showValue" class="div">
+					
+					  <!-- Show show result check box -->
+					<md-checkbox ng-disabled="showResult_btn_disable" class="md-title selectable" ng-model="showResult_mdl" aria-label="Checkbox 1" id="CrossSection" ng-change="showResult();">{{showresult_lbl}}</md-checkbox>
+					 <!-- //Show show result check box -->
+					 
+					 <md-content id="resultSection" class="md-title selectable" layout-padding>{{resistivity_ohm_lbl}} {{resistivity_result}}</md-content>
+				</div>
+				<!-- //Result Section   -->
+			</md-sidenav>
+			<!-- //Side nav -->
+		</md-content>
+		<!--// Inner Section -->
+	</body>
+	<script src="js/loading.js"></script>
+	<script  async="async">
+		if ( navigator.serviceWorker ) {
+			navigator
+			.serviceWorker
+			.register('service_worker_Resistivity_by_Four_Probe_Method.js')
+			.then(function(r) {
+				console.log('NW  App now available offline');
+			})
+			.catch(function(e) {
+				console.log('NW App NOT available offline');
+				console.log(e);
+			});
+		} else {
+			console.log('Service workers are not supported');
+		}     
+	</script>
+</html>	

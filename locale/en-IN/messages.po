@@ -1,0 +1,208 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: d\n"
+"POT-Creation-Date: 2017-05-31 10:18+0530\n"
+"PO-Revision-Date: 2017-06-03 09:52+0530\n"
+"Last-Translator: \n"
+"Language-Team: d\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;gt.gettext\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: view.js:159
+msgid "help1"
+msgstr "Select the materials."
+
+#: view.js:159
+msgid "help2"
+msgstr "Set the range of Current using the drop-down."
+
+#: view.js:159
+msgid "help3"
+msgstr "Set the current(mA) using the slider."
+
+#: view.js:159
+msgid "help4"
+msgstr "Select the Range of Oven using the drop-down."
+
+#: view.js:159
+msgid "help5"
+msgstr "Click on Set button to set the temperature."
+
+#: view.js:159
+msgid "help6"
+msgstr "Set the temperature using the slider."
+
+#: view.js:159
+msgid "help7"
+msgstr "Click on run button to run the experiment."
+
+#: view.js:159
+msgid "help8"
+msgstr "Click on Wait and Measure buttons for checking the result."
+
+#: view.js:159
+msgid "help9"
+msgstr "Click on the reset to reset the experiment."
+
+#: view.js:159
+msgid "Next"
+msgstr "Next"
+
+#: view.js:159
+msgid "Close"
+msgstr "Close"
+
+#: view.js:160
+msgid "Resistivity by Four Probe Method"
+msgstr "Resistivity by Four Probe Method"
+
+#: view.js:161
+msgid "Variables"
+msgstr "Variables"
+
+#: view.js:162
+msgid "g"
+msgstr ""
+
+#: view.js:163
+msgid "kg"
+msgstr ""
+
+#: view.js:164
+msgid "cm"
+msgstr ""
+
+#: view.js:165
+msgid "Select Material :"
+msgstr "Select Material :"
+
+#: view.js:166
+msgid "Range of Current :"
+msgstr "Range of Current :"
+
+#: view.js:167 view.js:193
+msgid "Germanium"
+msgstr "Germanium"
+
+#: view.js:168 view.js:201
+msgid "20 mA"
+msgstr "20 mA"
+
+#: view.js:169 view.js:217
+msgid "1 mV"
+msgstr ""
+
+#: view.js:170
+msgid "Current (mA) :"
+msgstr "Current (mA) :"
+
+#: view.js:171 view.js:209
+msgid "X1"
+msgstr "x1"
+
+#: view.js:172
+msgid "Oven"
+msgstr "Oven"
+
+#: view.js:173
+msgid "Cross Section"
+msgstr "Cross Section"
+
+#: view.js:174
+msgid "Range of Oven :"
+msgstr "Range of Oven :"
+
+#: view.js:175
+msgid "Measurements"
+msgstr "Measurements"
+
+#: view.js:176
+msgid "Stop"
+msgstr "Stop"
+
+#: view.js:177
+msgid "Set"
+msgstr "Set"
+
+#: view.js:178
+msgid "Run"
+msgstr "Run"
+
+#: view.js:179
+msgid "Wait"
+msgstr "Wait"
+
+#: view.js:180
+msgid "RESET"
+msgstr "RESET"
+
+#: view.js:181
+msgid "Show result"
+msgstr "Show result"
+
+#: view.js:182
+msgid "Resistivity (ohm cm) :"
+msgstr "Resistivity (ohm cm) :"
+
+#: view.js:183
+msgid "Measure"
+msgstr "Measure"
+
+#: view.js:184
+msgid "String Length(m):"
+msgstr "String Length(m):"
+
+#: view.js:185
+msgid "String Radius(m):"
+msgstr "String Radius(m):"
+
+#: view.js:186
+msgid "Moment of Inertia:"
+msgstr ""
+
+#: view.js:187
+msgid "Temperature:"
+msgstr "Temperature  (°C) :"
+
+#: view.js:188
+msgid "Range of Voltmeter :"
+msgstr "Range of Voltmeter :"
+
+#: view.js:189
+msgid "copyright"
+msgstr "Opensource Labify"
+
+#: view.js:196
+msgid "Silicon"
+msgstr "Silicon"
+
+#: view.js:204
+msgid "200 mA"
+msgstr "200 mA"
+
+#: view.js:212
+msgid "X10"
+msgstr "x10"
+
+#: view.js:220
+msgid "10 mV"
+msgstr ""
+
+#: view.js:223
+msgid "100 mV"
+msgstr ""
+
+#: view.js:226
+msgid "1 V"
+msgstr ""
+
+#: view.js:229
+msgid "10 V"
+msgstr ""

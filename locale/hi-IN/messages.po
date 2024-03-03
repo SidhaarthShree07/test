@@ -1,0 +1,233 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: d\n"
+"POT-Creation-Date: 2017-05-31 10:19+0530\n"
+"PO-Revision-Date: 2017-05-31 10:28+0530\n"
+"Last-Translator: \n"
+"Language-Team: d\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;gt.gettext\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: view.js:159
+msgid "help1"
+msgstr "सामग्री का चयन करें."
+
+#: view.js:159
+msgid "help2"
+msgstr "ड्रॉप-डाउन का उपयोग करके वर्तमान की सीमा निर्धारित करें।"
+
+#: view.js:159
+msgid "help3"
+msgstr "स्लाइडर का उपयोग करके वर्तमान (एमए) सेट करें"
+
+#: view.js:159
+msgid "help4"
+msgstr "ड्रॉप-डाउन का उपयोग करके ओवन की रेंज का चयन करें।"
+
+#: view.js:159
+msgid "help5"
+msgstr "तापमान सेट करने के लिए सेट बटन पर क्लिक करें"
+
+#: view.js:159
+msgid "help6"
+msgstr "स्लाइडर का उपयोग करके तापमान सेट करें"
+
+#: view.js:159
+msgid "help7"
+msgstr "प्रयोग चलाने के लिए रन बटन पर क्लिक करें।"
+
+#: view.js:159
+msgid "help8"
+msgstr "परिणाम की जांच के लिए रुको और उपाय बटन पर क्लिक करें"
+
+#: view.js:159
+msgid "help9"
+msgstr "प्रयोग को रीसेट करने के लिए रीसेट पर क्लिक करें।"
+
+#: view.js:159
+msgid "Next"
+msgstr "अगला"
+
+#: view.js:159
+msgid "Close"
+msgstr "बंद करे"
+
+#: view.js:160
+msgid "Resistivity by Four Probe Method"
+msgstr "चार जांच विधि द्वारा प्रतिरोधकता"
+
+#: view.js:161
+msgid "Variables"
+msgstr "चर"
+
+#: view.js:162
+msgid "g"
+msgstr ""
+
+#: view.js:163
+msgid "kg"
+msgstr ""
+
+#: view.js:164
+msgid "cm"
+msgstr ""
+
+#: view.js:165
+msgid "Select Material :"
+msgstr "सामग्री का चयन करें:"
+
+#: view.js:166
+msgid "Range of Current :"
+msgstr "वर्तमान की रेंज:"
+
+#: view.js:167 view.js:193
+msgid "Germanium"
+msgstr "जर्मेनियम"
+
+#: view.js:168 view.js:201
+msgid "20 mA"
+msgstr ""
+
+#: view.js:169 view.js:217
+msgid "1 mV"
+msgstr ""
+
+#: view.js:170
+msgid "Current (mA) :"
+msgstr "वर्तमान (एमए):"
+
+#: view.js:171 view.js:209
+msgid "X1"
+msgstr ""
+
+#: view.js:172
+msgid "Oven"
+msgstr "ओवन"
+
+#: view.js:173
+msgid "Cross Section"
+msgstr "अनुप्रस्थ काट"
+
+#: view.js:174
+msgid "Range of Oven :"
+msgstr "ओवन की रेंज:"
+
+#: view.js:175
+msgid "Measurements"
+msgstr "माप"
+
+#: view.js:176
+msgid "Stop"
+msgstr "रुकें"
+
+#: view.js:177
+msgid "Set"
+msgstr "सेट"
+
+#: view.js:178
+msgid "Run"
+msgstr "रन"
+
+#: view.js:179
+msgid "Wait"
+msgstr "रुकिए"
+
+#: view.js:180
+msgid "RESET"
+msgstr "रीसेट"
+
+#: view.js:181
+msgid "Show result"
+msgstr "परिणाम दिखाओ"
+
+#: view.js:182
+msgid "Resistivity (ohm cm) :"
+msgstr ""
+
+#: view.js:183
+msgid "Measure"
+msgstr "उपाय"
+
+#: view.js:184
+msgid "String Length(m):"
+msgstr ""
+
+#: view.js:185
+msgid "String Radius(m):"
+msgstr ""
+
+#: view.js:186
+msgid "Moment of Inertia:"
+msgstr ""
+
+#: view.js:187
+msgid "Temperature:"
+msgstr "तापमान (°C) :"
+
+#: view.js:188
+msgid "Range of Voltmeter :"
+msgstr "वाल्टमीटर का रेंज:"
+
+#: view.js:189
+msgid "copyright"
+msgstr "कॉपीराइट © अमृता विश्वविद्यालय 2015 - 2009"
+
+#: view.js:196
+msgid "Silicon"
+msgstr "सिलिकॉन"
+
+#: view.js:204
+msgid "200 mA"
+msgstr ""
+
+#: view.js:212
+msgid "X10"
+msgstr ""
+
+#: view.js:220
+msgid "10 mV"
+msgstr ""
+
+#: view.js:223
+msgid "100 mV"
+msgstr ""
+
+#: view.js:226
+msgid "1 V"
+msgstr ""
+
+#: view.js:229
+msgid "10 V"
+msgstr ""
+
+#~ msgid "Time Period:"
+#~ msgstr ""
+#~ "\n"
+#~ "समय सीमा:"
+
+#~ msgid "emf"
+#~ msgstr "ई एम एफ"
+
+#~ msgid "No of coils:"
+#~ msgstr "कॉयल की संख्या:"
+
+#~ msgid "Show Rod"
+#~ msgstr "दिखाएँ रॉड"
+
+#~ msgid "Show Graph"
+#~ msgstr "दिखाएँ ग्राफ"
+
+#~ msgid "Reset"
+#~ msgstr "रीसेट"
+
+#~ msgid "Barkhausen Effect"
+#~ msgstr "बरखौसेन प्रभाव"
+
+#~ msgid "Move Me"
+#~ msgstr "मुझे ले जाएं"
